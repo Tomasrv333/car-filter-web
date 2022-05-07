@@ -1,0 +1,71 @@
+@use './global/normalize';
+// @use './global/skeleton';
+
+.background {
+    height: 40vh;
+    background-image: url('/src/img/pexels-pixabay-210182.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contenedor {
+    display: flex;
+}
+
+form {
+    width: 20rem;
+    padding: 2rem; 
+}
+
+select {
+    height: 2rem;
+}
+
+.filter {
+    background-color: white;
+    border-radius: 0.3rem;
+    padding: 1.4rem 0.5rem;
+}
+
+#result {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    width: 22rem;
+    height: 17rem;
+    margin-top: 2rem;
+    background-color: white;
+    border: none;
+
+    .card__img {
+        width: 100%;
+        height: 12rem;
+        margin-bottom: 0.4rem;
+        background-image: url('/src/img/pexels-pixabay-210182.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .card__marca {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .card__modelo {
+
+    }
+
+    .card__price {
+
+    }
+
+    .card__km {
+
+    }
+}
+
+
