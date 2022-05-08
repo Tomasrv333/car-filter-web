@@ -6,7 +6,7 @@ var cars = [{
   modelo: 'Serie 3',
   year: 2020,
   precio: 30000,
-  kilometraje: 12000,
+  kilometraje: 20000,
   transmision: 'automatico'
 }, {
   image: 'https://acnews.blob.core.windows.net/imgnews/medium/NAZ_7ad10a2a85c2411099be4454dbf08e02.jpg',
@@ -30,7 +30,7 @@ var cars = [{
   modelo: 'A6',
   year: 2020,
   precio: 35000,
-  kilometraje: 10589,
+  kilometraje: 15000,
   transmision: 'automatico'
 }, {
   image: 'https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2016/10/580339-bmw-serie-2017.jpg?itok=vjB-bku8',
@@ -38,7 +38,7 @@ var cars = [{
   modelo: 'Serie 5',
   year: 2016,
   precio: 70000,
-  kilometraje: 10589,
+  kilometraje: 25000,
   transmision: 'automatico'
 }, {
   image: 'https://http2.mlstatic.com/D_NQ_NP_765535-MCO49581343894_042022-W.jpg',

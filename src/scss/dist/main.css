@@ -420,12 +420,14 @@ select {
 .filter {
   background-color: white;
   border-radius: 0.3rem;
-  padding: 1.4rem 0.5rem;
+  padding: 1.4rem 1rem;
 }
 
 #result {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 2rem 0 0;
 }
 
 .card {
@@ -434,6 +436,7 @@ select {
   margin-top: 2rem;
   background-color: white;
   border: none;
+  border-radius: 0.3rem;
 }
 .card .card__img {
   width: 100%;
@@ -443,8 +446,30 @@ select {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+.card .card__info {
+  width: 100%;
+  padding: 0 10%;
+  text-align: center;
+  justify-content: space-around;
 }
 .card .card__marca {
   text-align: center;
   font-size: 1.2rem;
+}
+#pMin, #pMax {
+  width: 75%;
+}
+
+.error {
+  background-color: white;
+}
+
+.alerta {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  margin: 2rem auto;
+  border-radius: 0.3rem;
 }

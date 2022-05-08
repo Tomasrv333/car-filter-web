@@ -17,7 +17,7 @@
         <div class="background">
             
         </div>
-        <div class="contenedor bg-secondary bg-opacity-10">
+        <div class="contenedor bg-secondary bg-opacity-10 justify-content-center">
             <form id="search">
                 <div class="column">
                     <div class="filter shadow-sm text-center mb-3">
@@ -42,8 +42,8 @@
                         <span class="d-block text-primary">Precio</span>
                         <div class="d-flex justify-content-center">
                             <div>
-                                <label class="d-block text-primary" for="minimo">Desde</label>
-                                <select class="w-100 text-secondary border border-primary rounded" id="pMin">
+                                <label class="d-block text-primary" for="pMin">Desde</label>
+                                <select class="text-secondary border border-primary rounded" id="pMin">
                                     <option value="">Seleccione</option>
                                     <option value="20000">20,000</option>
                                     <option value="30000">30,000</option>
@@ -56,8 +56,8 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="d-block text-primary" for="maximo">Hasta</label>
-                                <select class="w-100 text-secondary border border-primary rounded" id="pMax">
+                                <label class="d-block text-primary" for="pMax">Hasta</label>
+                                <select class="text-secondary border border-primary rounded" id="pMax">
                                     <option value="">Seleccione</option>
                                     <option value="20000">20,000</option>
                                     <option value="30000">30,000</option>
@@ -72,31 +72,27 @@
                         </div>
                     </div>
                     <div class="filter shadow-sm text-center mb-3">
-                        <label class="d-block text-primary" for="traccion">Transmision</label>
+                        <label class="d-block text-primary" for="transmision">Transmision</label>
                         <select class="w-75 text-secondary border border-primary rounded" id="transmision">
                             <option value="">Seleccione</option>
-                            <option value="Audi">Audi</option>
-                            <option value="BMW">BMW</option>
-                            <option value="Mercedes Benz">Mercedes Benz</option>
-                            <option value="Chevrolet">Chevrolet</option>
-                            <option value="Ford">Ford</option>
-                            <option value="Dodge">Dodge</option>
+                            <option value="automatico">Automatico</option>
+                            <option value="manual">Manual</option>
                         </select>
                     </div>
                     <div class="filter shadow-sm text-center mb-3">
-                        <label class="d-block text-primary" for="km-minimo">Kilometraje Min</label>
+                        <label class="d-block text-primary" for="kmMin">Kilometraje Min</label>
                         <select class="w-75 text-secondary border border-primary rounded" id="kmMin">
                                 <option value="">Seleccione</option>
+                                <option value="0">0</option>
+                                <option value="5000">5,000</option>
+                                <option value="10000">10,000</option>
+                                <option value="15000">15,000</option>
                                 <option value="20000">20,000</option>
+                                <option value="25000">25,000</option>
                                 <option value="30000">30,000</option>
-                                <option value="40000">40,000</option>
-                                <option value="50000">50,000</option>
-                                <option value="60000">60,000</option>
-                                <option value="70000">70,000</option>
-                                <option value="80000">80,000</option>
-                                <option value="90000">90,000</option>
+                                <option value="35000">35,000</option>
                         </select>
-                        <label class="d-block text-primary mt-4" for="maximo">Kilometraje Max</label>
+                        <label class="d-block text-primary mt-4" for="kmMax">Kilometraje Max</label>
                         <select class="w-75 text-secondary border border-primary rounded" id="kmMax">
                                 <option value="">Seleccione</option>
                                 <option value="20000">20,000</option>

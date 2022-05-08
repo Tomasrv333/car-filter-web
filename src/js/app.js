@@ -53,28 +53,28 @@ pMax.addEventListener('change', (e) => {
 })
 
 transmision.addEventListener('change', (e) => {
-    dataSearch.transmision = parseInt(e.target.value);
+    dataSearch.transmision = e.target.value;
     carFilter();
 })
 
 kmMin.addEventListener('change', (e) => {
-    dataSearch.kmMin = e.target.value;
+    dataSearch.kmMin = parseInt(e.target.value);
     carFilter();
 })
 
 kmMax.addEventListener('change', (e) => {
-    dataSearch.kmMax = e.target.value;
+    dataSearch.kmMax = parseInt(e.target.value);
     carFilter();
 })
 
 // Functions
 function showCars(cars) {
-    cleanHTML();
+    clearHTML();
 
     cars.forEach(car => {
         const {image, marca, modelo, year, precio, kilometraje, transmision} = car;
         const carHTML = document.createElement('div');
-        carHTML.classList.add('card');
+        carHTML.classList.add('card', 'shadow-sm');
 
         const cardImg = document.createElement('div');
         cardImg.classList.add('card__img');
@@ -83,8 +83,8 @@ function showCars(cars) {
 
         const nameCar = document.createElement('div');
         nameCar.classList.add('d-flex', 'justify-content-center')
-        const priceCar = document.createElement('div');
-        priceCar.classList.add('d-flex', 'justify-content-center')
+        const infoCar = document.createElement('div');
+        infoCar.classList.add('card__info','d-flex')
 
         const cardMarca = document.createElement('p');
         cardMarca.classList.add('card__marca');
@@ -97,24 +97,29 @@ function showCars(cars) {
         nameCar.appendChild(cardModelo);
 
         const cardPrice = document.createElement('p');
-        cardPrice.classList.add('card__price')
+        cardPrice.classList.add('card__price', 'w-25')
         cardPrice.textContent = `$${precio}`;
-        priceCar.appendChild(cardPrice);
+        infoCar.appendChild(cardPrice);
+
+        const cardYear = document.createElement('p');
+        cardYear.classList.add('card__year', 'w-25');
+        cardYear.textContent = `${year}`;
+        infoCar.appendChild(cardYear);
 
         const cardKm = document.createElement('p');
-        cardKm.classList.add('card__km')
+        cardKm.classList.add('card__km', 'w-25')
         cardKm.textContent = `${kilometraje}km`;
-        priceCar.appendChild(cardKm);
+        infoCar.appendChild(cardKm);
 
         carHTML.appendChild(cardImg);
         carHTML.appendChild(nameCar);
-        carHTML.appendChild(priceCar);
+        carHTML.appendChild(infoCar);
 
         result.appendChild(carHTML);
     })
 }
 
-function cleanHTML() {
+function clearHTML() {
     while (result.firstChild) {
         result.removeChild(result.firstChild);
     }
@@ -147,7 +152,7 @@ function noResult() {
     const noResult = document.createElement('div');
     noResult.classList.add('alerta', 'error');
     noResult.textContent = 'No hay resultados';
-    resultado.appendChild(noResult);
+    result.appendChild(noResult);
 }
 
 function marcaFilter(car) {
@@ -185,7 +190,7 @@ function pMaxFilter(car) {
 function kmMinFilter(car) {
     const {kmMin} = dataSearch;
     if (kmMin) {
-        return car.precio >= kmMin;
+        return car.kilometraje >= kmMin;
     }
     return car;
 }
@@ -193,7 +198,7 @@ function kmMinFilter(car) {
 function kmMaxFilter(car) {
     const {kmMax} = dataSearch;
     if (kmMax) {
-        return car.precio <= kmMax;
+        return car.kilometraje <= kmMax;
     }
     return car;
 }

@@ -45,20 +45,20 @@ pMax.addEventListener('change', function (e) {
   carFilter();
 });
 transmision.addEventListener('change', function (e) {
-  dataSearch.transmision = parseInt(e.target.value);
+  dataSearch.transmision = e.target.value;
   carFilter();
 });
 kmMin.addEventListener('change', function (e) {
-  dataSearch.kmMin = e.target.value;
+  dataSearch.kmMin = parseInt(e.target.value);
   carFilter();
 });
 kmMax.addEventListener('change', function (e) {
-  dataSearch.kmMax = e.target.value;
+  dataSearch.kmMax = parseInt(e.target.value);
   carFilter();
 }); // Functions
 
 function showCars(cars) {
-  cleanHTML();
+  clearHTML();
   cars.forEach(function (car) {
     var image = car.image,
         marca = car.marca,
@@ -68,14 +68,14 @@ function showCars(cars) {
         kilometraje = car.kilometraje,
         transmision = car.transmision;
     var carHTML = document.createElement('div');
-    carHTML.classList.add('card');
+    carHTML.classList.add('card', 'shadow-sm');
     var cardImg = document.createElement('div');
     cardImg.classList.add('card__img');
     cardImg.style.backgroundImage = "url('".concat(image, "')");
     var nameCar = document.createElement('div');
     nameCar.classList.add('d-flex', 'justify-content-center');
-    var priceCar = document.createElement('div');
-    priceCar.classList.add('d-flex', 'justify-content-center');
+    var infoCar = document.createElement('div');
+    infoCar.classList.add('card__info', 'd-flex');
     var cardMarca = document.createElement('p');
     cardMarca.classList.add('card__marca');
     cardMarca.textContent = "".concat(marca);
@@ -85,21 +85,25 @@ function showCars(cars) {
     cardModelo.textContent = "".concat(modelo);
     nameCar.appendChild(cardModelo);
     var cardPrice = document.createElement('p');
-    cardPrice.classList.add('card__price');
+    cardPrice.classList.add('card__price', 'w-25');
     cardPrice.textContent = "$".concat(precio);
-    priceCar.appendChild(cardPrice);
+    infoCar.appendChild(cardPrice);
+    var cardYear = document.createElement('p');
+    cardYear.classList.add('card__year', 'w-25');
+    cardYear.textContent = "".concat(year);
+    infoCar.appendChild(cardYear);
     var cardKm = document.createElement('p');
-    cardKm.classList.add('card__km');
+    cardKm.classList.add('card__km', 'w-25');
     cardKm.textContent = "".concat(kilometraje, "km");
-    priceCar.appendChild(cardKm);
+    infoCar.appendChild(cardKm);
     carHTML.appendChild(cardImg);
     carHTML.appendChild(nameCar);
-    carHTML.appendChild(priceCar);
+    carHTML.appendChild(infoCar);
     result.appendChild(carHTML);
   });
 }
 
-function cleanHTML() {
+function clearHTML() {
   while (result.firstChild) {
     result.removeChild(result.firstChild);
   }
@@ -129,7 +133,7 @@ function noResult() {
   var noResult = document.createElement('div');
   noResult.classList.add('alerta', 'error');
   noResult.textContent = 'No hay resultados';
-  resultado.appendChild(noResult);
+  result.appendChild(noResult);
 }
 
 function marcaFilter(car) {
@@ -176,7 +180,7 @@ function kmMinFilter(car) {
   var kmMin = dataSearch.kmMin;
 
   if (kmMin) {
-    return car.precio >= kmMin;
+    return car.kilometraje >= kmMin;
   }
 
   return car;
@@ -186,7 +190,7 @@ function kmMaxFilter(car) {
   var kmMax = dataSearch.kmMax;
 
   if (kmMax) {
-    return car.precio <= kmMax;
+    return car.kilometraje <= kmMax;
   }
 
   return car;

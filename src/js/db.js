@@ -5,7 +5,7 @@ const cars = [
 		modelo: 'Serie 3',
 		year: 2020,
 		precio: 30000,
-        kilometraje: 12000,
+        kilometraje: 20000,
 		transmision: 'automatico'
 	},
 	{ 
@@ -32,7 +32,7 @@ const cars = [
         modelo: 'A6', 
         year: 2020, 
         precio: 35000, 
-        kilometraje: 10589,
+        kilometraje: 15000,
         transmision: 'automatico' 
     },
 	{
@@ -41,7 +41,7 @@ const cars = [
 		modelo: 'Serie 5',
 		year: 2016,
 		precio: 70000,
-        kilometraje: 10589,
+        kilometraje: 25000,
 		transmision: 'automatico'
 	},
 	{
